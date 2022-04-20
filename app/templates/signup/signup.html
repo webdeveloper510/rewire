@@ -1,0 +1,119 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app.css' %}">
+
+<div class="wrapper bg-white">
+    <div class="h2 text-center">Rewire</div>
+   <h2> <div class="h4 text-muted text-center pt-2">Signup</div><br></h2>
+    <form class="pt-3" method ="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+            <div class="item form-group {% if form.first_name.errors %} has-error  {% endif %}"> 
+              <label for="Name">First Name</label>
+              <div class="input-field"> {{form.first_name}}</div>
+              {% if form.first_name.errors %}
+              {% for error in form.first_name.errors %}
+              <span class="error text-danger">
+                  <strong>{{ error|escape }}</strong>
+              </span>
+              {% endfor %}
+              {% endif %}
+            </div>
+            </div><br>
+            <div class="col-md-6">
+                <div class="item form-group {% if form.last_name.errors %} has-error  {% endif %}"> 
+                    <label for="Name">Last Name</label>
+                    <div class="input-field"> {{form.last_name}}</div>
+                    {% if form.last_name.errors %}
+                    {% for error in form.last_name.errors %}
+                    <span class="error text-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </span>
+                    {% endfor %}
+                    {% endif %}
+                    
+                </div>
+              </div><br>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+            <div class="item form-group {% if form.username.errors %} has-error  {% endif %}"> 
+                <label for="Name">Username</label>
+                <div class="input-field"> {{form.username}}</div>
+                {% if form.username.errors %}
+                {% for error in form.username.errors %}
+                <span class="error text-danger">
+                    <strong>{{ error|escape }}</strong>
+                </span>
+                {% endfor %}
+                {% endif %}
+              </div>
+       </div><br>
+      <div class="col-md-6">
+        <div class="item form-group {% if form.email.errors %} has-error  {% endif %}"> 
+            <label for="email">Email</label>
+            <div class="input-field">  {{form.email}}</div>
+            {% if form.email.errors %}
+            {% for error in form.email.errors %}
+            <span class="error text-danger">
+                <strong>{{ error|escape }}</strong>
+            </span>
+            {% endfor %}
+            {% endif %}
+             
+        </div>
+      </div>
+    </div><br>
+
+      <div class="row">
+              <div class="col-md-6">
+                <div class="item form-group {% if form.password.errors %} has-error  {% endif %}"> 
+                    <label for="pwd">Password</label>
+                    <div class="input-field">{{form.password}}</div>
+                              {% if form.password.errors %}
+                    {% for error in form.password.errors %}
+                    <span class="error text-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </span>
+                    {% endfor %}
+                    {% endif %}
+               
+                </div>
+             </div><br>
+             <div class="item form-group {% if form.phone_number.errors %} has-error  {% endif %}"> 
+                <label for="pwd">Phone Number</label>
+                <div class="input-field">{{form.phone_number}}</div>
+                {% if form.phone_number.errors %}
+                {% for error in form.phone_number.errors %}
+                <span class="error text-danger">
+                    <strong>{{ error|escape }}</strong>
+                </span>
+                {% endfor %}
+                {% endif %}
+            </div> <br>
+
+ 
+        <div class="d-flex align-items-start">
+          
+
+        </div> <button class="btn btn-block text-center my-3">Sign up</button>
+        {% if messages%}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="container-fluid p-0">
+                <div class="row">
+                    {% comment %} <div class="col-sm-2">
+                <div class="image_check"><img src="/static/image/check.jpg"></div></div> {% endcomment %}
+               
+                <div class="col-sm-12"><div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+                    <center>{{ message }}</center> 
+           
+                    {% endfor %}
+        </ul> 
+          {%endif%} 
+
+     
+    </form>
+</div>

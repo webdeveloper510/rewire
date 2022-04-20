@@ -1,0 +1,40 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app.css' %}">
+
+
+<div class="wrapper bg-white">
+    <div class="h2 text-center">Rewire</div>
+  <h2><div class="h4 text-muted text-center pt-2">Login</div><br></h2>
+    <form class="pt-3" method ="POST">
+        {% csrf_token %}
+        <div class="form-group py-2">
+            <label>Username</label>
+            <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" placeholder="Username or Email Address" name="uname"></div><br>
+        </div>
+        <div class="form-group py-1 pb-2">
+            <label>Password</label>
+            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password" placeholder="Enter your Password"  name="psw" required> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div><br>
+        </div>
+        <div class="d-flex align-items-start">
+            <div class="ml-auto"> <a href="{% url 'password_reset' %}" id="forgot">Forgot Password?</a> </div><br>
+        </div>
+        {% if messages%}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="container-fluid p-0">
+           
+              <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+              
+                <center>{{ message }}</center> 
+            
+            {% endfor %}
+           
+        </ul> 
+        {% endif %}  
+        <div class="col-md-12 text-center">
+            <button type="submit" class="btn btn-block text-center my-3">Login</button>
+        </div>
+        <div class="text-center pt-3 text-muted">Not a member? <a href="{% url 'signup'%}">Sign up</a></div>
+    </form>
+</div>
