@@ -26,3 +26,12 @@ class user(AbstractBaseUser,PermissionsMixin):
 
     def __str__(self):
         return self.username
+      
+class policy(models.Model):
+  insurer=models.CharField(max_length=200,null=True)
+  product=models.CharField(max_length=200,null=True)
+  policy_number=models.IntegerField(max_length=200,null=True)
+  renewal=models.DateField(null=True)
+  policy_yearly=models.CharField(max_length=200,null=True)
+  status=models.CharField(max_length=200,null=True)    
+  

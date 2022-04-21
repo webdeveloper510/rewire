@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app.css' %}">
+
+
 <!-- =========================================================
 * Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
 ==============================================================
@@ -36,6 +41,7 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    {% comment %} <link rel="preconnect" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" /> {% endcomment %}
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
@@ -64,31 +70,7 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="static/assets/js/config.js"></script>
 
-    <style>
-      .menu .app-brand.demo {
-    height: 100px !important;
-    margin-top: 12px;
-}
-    a.Logoutbtn button.btn {
-        background: #e7e7e7;
-    }
-    .card-body.box-moddel {
-    padding: 40px 20px 0px 20px !important;
-    background: #e4d0ff;
-}
-a.app-brand-link {
-    display: block !important;
-}
-.box-moddel p {
-    margin-top: 20px;
-}
-img {
-    width: 100%;
-}
-
-
-
-    </style>
+  
   </head>
 
   <body>
@@ -142,7 +124,7 @@ img {
   
                 <ul class="menu-sub">
                   <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="{% url 'signup' %}" class="menu-link">
                       <div data-i18n="Without menu">My Policies</div>
                     </a>
                   </li>
@@ -288,16 +270,21 @@ img {
                           
                           <h3 class="card-title text-nowrap mb-1">$4,679</h3>
                           <p><span class="fw-semibold d-block mb-1">Earned</span></p>
+
+                          
                         </div>
                       </div>
                     </div>
+                    
                   </div>
                 
+           
                
                   
               </div>
             
             </div>
+
             <!-- / Content -->
 
             <!-- Footer -->
@@ -340,6 +327,8 @@ img {
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+ 
+    </script>
     <script src="static/assets/vendor/libs/jquery/jquery.js"></script>
     <script src="static/assets/vendor/libs/popper/popper.js"></script>
     <script src="static/assets/vendor/js/bootstrap.js"></script>

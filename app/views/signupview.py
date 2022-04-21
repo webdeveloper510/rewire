@@ -78,7 +78,7 @@ def create(request):
             return render(request,"signup/signup.html",{'form':accountform,"context":context})
 
     form = AddCreateForm()
-    return render(request,"signup/signup.html",{'form':form,"context":context})
+    return render(request,"data.html",{'form':form,"context":context})
 
 
 def activate(request, uidb64, token):
@@ -95,3 +95,14 @@ def activate(request, uidb64, token):
         return redirect('/')
     else:
         return HttpResponse('Activation link is invalid!')
+
+def policies(request):
+    show=policy()
+    show.insurer=request.GET.get("d1")
+    show.product=request.GET.get("d2")
+    show.policy_number=request.GET.get("d3")
+    show.policy_yearly=request.GET.get("d5")
+    show.status=request.GET.get("d6")
+    show.save()
+    
+    return redirect('signup')
