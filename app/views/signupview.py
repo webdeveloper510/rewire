@@ -116,14 +116,8 @@ def policies(request):
     
 def make(request):
     z=policy.objects.all()
-    if request.method == "GET":
-        print("entry")
-        submitbutton= request.GET.get('check')
-        print("showed",submitbutton)
-        if not submitbutton:
-            submitbutton="dd"
-            print("ss",submitbutton)  
-    return render(request,"data.html",{"show":z,'submit':submitbutton})
+    
+    return render(request,"data.html",{"show":z})
     
     
 def update(request,id):
