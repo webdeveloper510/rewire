@@ -1,4 +1,18 @@
+
 <!DOCTYPE html>
+{% if messages%}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="container-fluid p-0">
+           
+              <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
+              
+                <center>{{ message }}</center> 
+            
+            {% endfor %}
+           
+        </ul> 
+        {% endif %}  
 
 {% load static %}
 
@@ -75,6 +89,8 @@
   </head>
 
   <body>
+    <form class="" action="" method="POST">
+      {% csrf_token %}
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -82,7 +98,7 @@
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
           <div class="app-brand demo">
-            <a href="#" class="app-brand-link">
+            <a href="/" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <img src="static/assets/img/avatars/logo.png">
               </span>
@@ -125,7 +141,7 @@
   
                 <ul class="menu-sub">
                   <li class="menu-item">
-                    <a href="{% url 'signup' %}" class="menu-link">
+                    <a href="{% url 'data' %}" class="menu-link">
                       <div data-i18n="Without menu">My Policies</div>
                     </a>
                   </li>
@@ -269,9 +285,12 @@
                             </div>
                           </div>
                         </div>
-                       
-                        <button id="addRow" style="width:100px" class="show" onclick="addRow()">Add a Policy</button> 
-                       <table id="example" class="display" width="100%" cellspacing="0">
+                        <button id="addRow" type= "button" style="width:100px" class="show" onclick="addRows(event)" name="check" value ="add">Add a Policy</button> 
+                        <button id="addRow" type= "button" style="width:100px" class="show" onclick="addRo(event)" name="check2" value="abb">Show Registered Policy</button> 
+                     
+                        <table id="example" class="display" width="100%" cellspacing="0">
+    
+
                             <thead>
                               <tr>
                                 <th>Insurer</th>
@@ -279,30 +298,40 @@
                                 <th>Policy Number</th>
                                 <th>Renewal Date</th>
                                 <th>Policy Yearly Premium</th>
-                                <th>Status</th>
+                                <th>Status</th> 
                                 <th>Save</th>
+                                <th>Update</th>
                                 
                               </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                <td id ="hr">
-                                    <input type="text"  id="t1" value=""/> </td>
-                                <td id="2" >
-                                    <input type="text" id="t2"  value="" /> </td>
-                                <td id = "3">
-                                    <input type="number" id="t3" value=""/> </td>
-                                <td>
-                                    <input type="date" id="t4"   value=""/> </td>
-                                <td>
-                                    <input type="text" id="t5"  value=""/> </td>
-                                <td>
-                                    <input type="text" id="t6"  value=""/> </td>  
-                                <td> 
-                                    <button type="button" id="{{forloop.counter}}" onclick="addData(this)" class="btn">Use</button>
-                                </td>
+                           
+                            <tbody> 
+                              
+                                {%for i in z%} <tr>
+
+                                  
+                
+                                  <td id ="hr">
+                                    <input type="text"  id="t1" value="{{i.insurer}}"/> </td>
+                                  <td id="2" >
+                                    <input type="text" id="t2"  value="{{i.product}}" /> </td>
+                                  <td id = "3">
+                                    <input type="number" id="t3" value="{{i.policy_number}}"/> </td>
+                                  <td>
+                                    <input type="date" id="t4"   value="{{i.renewal}}"/> </td>
+                                  <td>
+                                    <input type="text" id="t5"  value="{{i.policy_yearly}}"/> </td>
+                                  <td>
+                                    <input type="text" id="t6"  value="{{i.status}}"/> </td>  
+                                      
+                                  <td>
                                  
-                                </tr>
+                                    <button type="submit" id="{{forloop.counter}}" onclick="addData(this)"  class="btn" name="test" value="raw">Use</button>
+                                    </td>
+                              </tr>
+                              {%endfor%}
+                           
+                          
                               </tbody>
                           </table>
                           
@@ -311,7 +340,7 @@
                   </div>
                 
                 </div>
-
+         
 
             </script>
             <script src="static/assets/vendor/libs/jquery/jquery.js"></script>
@@ -335,7 +364,7 @@
             <script async defer src="https://buttons.github.io/buttons.js"></script>
           </body>
         </html>
-        
+        </form>
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
@@ -344,36 +373,98 @@
 <script src ="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 
 <script>
-
-    function addRow() {
-        
-        let row_html = ` <tr>
-                            <td id ="hr">
-                            <input type="text"  id="t1" value=""/> </td>
-                            <td id="2" >
-                            <input type="text" id="t2"  value="" /> </td>
-                            <td id = "3">
-                            <input type="number" id="t3" value=""/> </td>
-                            <td>
-                                <input type="date" id="t4"   value=""/> </td>
-                            <td>
-                                <input type="text" id="t5"  value=""/> </td>
-                            <td>
-                                <input type="text" id="t6"  value=""/> </td>  
-                                
-                            <td>
-                                <button type="button" id="{{forloop.counter}}" onclick="addData(this)"  class="btn">Use</button>
-                            </td>
-                        </tr>
-                    `;
-
-            $("#example tbody").append(row_html);
-    }
-
-    function addData (current){
+  function addRo(e) {
     
+     
+    let rows_html = `  
+     
+
+
+       {%for i in show%}
+      <tr>
+       
+       <td>{{i.insurer}}</td>
+       <td>
+         {{i.product}}</td>
+       <td>{{i.policy_number}} </td>
+       <td>
+         {{i.renewal}}</td>
+       <td>
+         {{i.policy_yearly}}</td>
+       <td>
+         {{i.status}}</td>  
+         
+       <td>
+        {% if a == True%}
+         <button type="submit" id="{{forloop.counter}}" onclick="addData(this)"  class="btn" name="test" value="raw">Use</button>
+       </td>
+       {%endif%}
+     
+          <td> 
+           <a href="{% url 'update' i.id %}" class="btn btn-info btn-lg">
+            <span class="glyphicon glyphicon-pencil"></span> Update 
+          </a></td>
+       
+ </tr>
+ {%endfor%}
+ `;
+$('#example').DataTable().destroy();
+$("#example tbody").append(rows_html);
+$(function(){
+ $('#example').dataTable({});
+});
+}
+ 
+
+    function addRows(e) {
+     
+     let row_html = ` 
+    
+       <tr>
+        
+        <td id ="hr">
+          <input type="text"  id="t1" value=""/> </td>
+        <td id="2" >
+          <input type="text" id="t2"  value="" /> </td>
+        <td id = "3">
+          <input type="number" id="t3" value=""/> </td>
+        <td>
+          <input type="date" id="t4"   value=""/> </td>
+        <td>
+          <input type="text" id="t5"  value=""/> </td>
+        <td>
+          <input type="text" id="t6"  value=""/> </td>  
+            
+        <td>
+        
+          <button type="submit" id="{{forloop.counter}}" onclick="addData(this)"  class="btn" name="test" value="raw">Use</button>
+      </td>
+      
+      <td> 
+        {% if a == True%}
+        <a href="{% url 'update' i.id %}" class="btn btn-info btn-lg">
+         <span class="glyphicon glyphicon-pencil"></span> Update 
+       </a></td>
+     
+       {%endif%}
+    
+        
+      
+  </tr>
+
+  `;
+$('#example').DataTable().destroy();
+$("#example tbody").append(row_html);
+$(function(){
+  $('#example').dataTable({});
+});
+}
+  
+    function addData (current){
+     
         console.log('add data',$(current).parent().parent().find("#t1").val());
         let t1 = $(current).parent().parent().find("#t1").val();
+        console.log(t1)
         let t2 = $(current).parent().parent().find("#t2").val();
         let t3 = $(current).parent().parent().find("#t3").val();
         let t4 = $(current).parent().parent().find("#t4").val();
@@ -381,45 +472,35 @@
         let t6 = $(current).parent().parent().find("#t6").val();
 
         console.log('my value',[t1,t2,t3,t4,t5,t6])
-
         $.ajax({
-            type:"GET",
-            url: '/policy',
-            data: {
-            'd1':   t1,
-            "d2":   t2,
-            "d3":   t3,
-            "d4":   t4,
-            "d5":   t5,
-            "d6":   t6,
-            },
-            dataType: 'json',
-            success: function (data) {
-                console.log('coming data', data)
-            }
-        });
-    }
+          type:"GET",
+          url: 'policy',
+          data: {
+          'd1':   t1,
+          "d2":   t2,
+          "d3":   t3,
+          "d4":   t4,
+          "d5":   t5,
+          "d6":   t6,
+          },
+          dataType: 'json',
+          success: function (data) {
+              console.log('coming data', data)
+          }
+      });
+        
+     
+    } 
 
    
-</script>
 
-
-
-
-<script>
  
       $(document).ready(function() {
         //var url = 'http://www.json-generator.com/api/json/get/ckDfqBChNK?indent=2';
         var url = 'http://www.json-generator.com/api/json/get/bQzyuEGndu?indent=2';
         var table = $('#example').DataTable();
-    
-        // add row
-       // $('#addRow').click(function() {
-          //t.row.add( [1,2,3] ).draw();
-         // var rowHtml = $("#newRow").find("tr")[0].outerHTML
-         // table.row.add($(rowHtml)).draw();
-      //  });
-      });
-    
+  
+      }); 
+   
 </script>
 

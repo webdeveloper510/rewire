@@ -1,4 +1,3 @@
-
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -97,12 +96,52 @@ def activate(request, uidb64, token):
         return HttpResponse('Activation link is invalid!')
 
 def policies(request):
-    show=policy()
+    
+    show=policy()   
+    submitbutton= request.GET.get('text')
+    print("show",submitbutton)
+    
     show.insurer=request.GET.get("d1")
     show.product=request.GET.get("d2")
     show.policy_number=request.GET.get("d3")
+    show.renewal=request.GET.get("d4")
     show.policy_yearly=request.GET.get("d5")
     show.status=request.GET.get("d6")
+  
     show.save()
+    show=show.insurer
+    z=policy.objects.all()
+    return render(request,"data.html",{"show":z,'b':1})
     
-    return redirect('signup')
+    
+def make(request):
+    z=policy.objects.all()
+    if request.method == "GET":
+        print("entry")
+        submitbutton= request.GET.get('check')
+        print("showed",submitbutton)
+        if not submitbutton:
+            submitbutton="dd"
+            print("ss",submitbutton)  
+    return render(request,"data.html",{"show":z,'submit':submitbutton})
+    
+    
+def update(request,id):
+    print("hello")
+    submitbutton= request.POST.get('ss')
+    print("try",submitbutton)
+    ploicies = policy.objects.get(pk=id)
+    if request.method == 'POST':
+     
+        ploicies.insurer = request.POST.get('insurer')
+        ploicies.product = request.POST.get('product')
+        ploicies.policy_number = request.POST.get('policy_number')
+        ploicies.renewal = request.POST.get('renewal')
+        ploicies.policy_yearly = request.POST.get('policy_yearly')
+        ploicies.status = request.POST.get('status')
+
+        ploicies.save()
+        messages.success(request,"Policy details updated Successfully.")
+        return redirect("/data")
+        
+    return render(request,"update.html",{'agencies':ploicies})

@@ -119,7 +119,7 @@ WSGI_APPLICATION = 'rewire.wsgi.application'
 #         }
 #     }
 # }
-
+DATE_FORMAT = 'YYYY-MM-DD'
 
 DATABASES = {
     'default': {
