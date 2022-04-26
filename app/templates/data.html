@@ -195,12 +195,12 @@
         {% if i.created_by_id == request.user.id %}
        <tr>
         
-        <td>{{i.insurer'}}</td>
+        <td>{{i.insurer}}</td>
         <td>
           {{i.product}}</td>
         <td>{{i.policy_number}} </td>
         <td>
-          {{i.renewal|date:'Y-m-d}}</td>
+          {{i.renewal|date:'Y-m-d'}}</td>
         <td>
           {{i.policy_yearly}}</td>
         <td>
