@@ -129,6 +129,7 @@
                         </tr>
                      </thead>
                      <tbody>
+                     
                         {%for i in z%} 
                         <tr>
                            <td id ="hr">
@@ -199,7 +200,7 @@
           {{i.product}}</td>
         <td>{{i.policy_number}} </td>
         <td>
-          {{i.renewal}}</td>
+          {{i.renewal|date:'Y-m-d'}}</td>
         <td>
           {{i.policy_yearly}}</td>
         <td>
