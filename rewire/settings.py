@@ -192,3 +192,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'test12041966@gmail.com'
 EMAIL_HOST_PASSWORD = 'mongodb31'
 EMAIL_PORT = 587
+
+
+#xfgf
