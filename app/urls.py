@@ -6,7 +6,9 @@ from app.views import signupview
 
 urlpatterns = [
     path('', signupview.index, name='index'),
-    path('signup', signupview.create, name='signup'),
+    path('signup/', signupview.create, name='signup'),
+    path('login',loginview.user_login,name="login"),
+    path('logout',loginview.userLogout,name="logout"),
     path('activate/<uidb64>/<token>/',signupview.activate, name='activate'),
     path("password_reset", loginview.password_reset_request, name="password_reset"),
     path("password_complete/<uidb64>/<token>/", loginview.change_password, name="password_complete"), 

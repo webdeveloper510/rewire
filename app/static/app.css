@@ -2,10 +2,10 @@
     height: 100px !important;
     margin-top: 12px;
 }
-    a.Logoutbtn button.btn {
+a.Logoutbtn button.btn {
         background: #e7e7e7;
-    }
-    .card-body.box-moddel {
+}
+.card-body.box-moddel {
     padding: 40px 20px 0px 20px !important;
     background: #e4d0ff;
 }

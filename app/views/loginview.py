@@ -35,19 +35,16 @@ def user_login(request):
         if user is not None:
           login(request,user)
           messages.success(request,"You are Successfully LoggedIn")
+          return redirect('/')
          
         else:
           messages.error(request,"Invalid Credential", extra_tags='login')
-          return redirect('/')
+          return redirect('login')
               
     return render(request,"login.html")
 
 
-
-def userLogout(request):
-  auth.logout(request)
-  return redirect('/login')
-
+  
 
 
 def password_reset_request(request):
@@ -92,3 +89,8 @@ def change_password(request,**kwargs):
     else:
         messages.success(request,"New Password and Confirm Password must be same")
   return render(request,"signup/password_reset_confirm.html")
+
+
+def userLogout(request):
+  auth.logout(request)
+  return redirect('/')

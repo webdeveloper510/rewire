@@ -77,7 +77,7 @@ def create(request):
             return render(request,"signup/signup.html",{'form':accountform,"context":context})
 
     form = AddCreateForm()
-    return render(request,"data.html",{'form':form,"context":context})
+    return render(request,"signup/signup.html",{'form':form,"context":context})
 
 
 def activate(request, uidb64, token):
@@ -91,12 +91,12 @@ def activate(request, uidb64, token):
     if users is not None and account_activation_token.check_token(users, token):
         users.is_active = user.objects.filter(id=uid).update(is_active=True)
         login(request, users)
-        return redirect('/')
+        return redirect('login')
     else:
         return HttpResponse('Activation link is invalid!')
 
 def policies(request):
-    
+  
     show=policy()   
     submitbutton= request.GET.get('text')
     print("show",submitbutton)
@@ -107,6 +107,7 @@ def policies(request):
     show.renewal=request.GET.get("d4")
     show.policy_yearly=request.GET.get("d5")
     show.status=request.GET.get("d6")
+    show.created_by = request.user
   
     show.save()
     show=show.insurer

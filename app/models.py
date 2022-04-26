@@ -21,7 +21,7 @@ class user(AbstractBaseUser,PermissionsMixin):
     created_at = models.DateTimeField(auto_now_add=True,null=True)
     updated_at =  models.DateTimeField(auto_now=True)
     
-    USERNAME_FIELD 	='username'
+    USERNAME_FIELD 	='email'
     objects = CustomUserManager()
 
     def __str__(self):
@@ -34,4 +34,4 @@ class policy(models.Model):
   renewal=models.DateField(null=True)
   policy_yearly=models.CharField(max_length=200,null=True)
   status=models.CharField(max_length=200,null=True)    
-  
+  created_by=models.ForeignKey("user",on_delete=models.CASCADE,null=True)

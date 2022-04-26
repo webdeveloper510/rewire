@@ -31,36 +31,13 @@ class AddCreateForm(ModelForm):
         }),validators=[validate_password])
   
 
-    first_name= forms.CharField(label="Firstname",required = True,widget=forms.TextInput(
-        attrs={
-        'class':'form-control',
-        'placeholder':'Enter your Firstname',
-        
-        }
-    ))
+    
 
-    last_name = forms.CharField(label="Lastname",required = True,widget=forms.TextInput(
-        attrs={
-        'class':'form-control',
-        'placeholder':'Enter your Lastname',
-        
-        }
-    ))
   
-    phone_number=forms.IntegerField(label="Phone Number",required = True,widget=forms.TextInput(
-        attrs={
-        'max_length':10,
-        'class':'form-control',
-        'placeholder':'Enter Phone number',
-        'type':'number'
-        
-        }
-
-    ))
 
     class Meta:
         model = user
-        fields = ["username","last_name","email","password","phone_number","first_name"]
+        fields = ["username","email","password"]
 
 
    

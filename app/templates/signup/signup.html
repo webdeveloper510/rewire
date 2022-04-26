@@ -1,43 +1,86 @@
+
+<!DOCTYPE html>
+
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'app.css' %}">
 
-<div class="wrapper bg-white">
-    <div class="h2 text-center">Rewire</div>
-   <h2> <div class="h4 text-muted text-center pt-2">Signup</div><br></h2>
-    <form class="pt-3" method ="POST">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-md-6">
-            <div class="item form-group {% if form.first_name.errors %} has-error  {% endif %}"> 
-              <label for="Name">First Name</label>
-              <div class="input-field"> {{form.first_name}}</div>
-              {% if form.first_name.errors %}
-              {% for error in form.first_name.errors %}
-              <span class="error text-danger">
-                  <strong>{{ error|escape }}</strong>
-              </span>
-              {% endfor %}
-              {% endif %}
-            </div>
-            </div><br>
-            <div class="col-md-6">
-                <div class="item form-group {% if form.last_name.errors %} has-error  {% endif %}"> 
-                    <label for="Name">Last Name</label>
-                    <div class="input-field"> {{form.last_name}}</div>
-                    {% if form.last_name.errors %}
-                    {% for error in form.last_name.errors %}
-                    <span class="error text-danger">
-                        <strong>{{ error|escape }}</strong>
-                    </span>
-                    {% endfor %}
-                    {% endif %}
-                    
-                </div>
-              </div><br>
-      </div>
 
-      <div class="row">
+<!-- =========================================================
+* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
+==============================================================
+
+* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
+* Created by: ThemeSelection
+* License: You must have a valid license purchased in order to legally use the theme for your project.
+* Copyright ThemeSelection (https://themeselection.com)
+
+=========================================================
+ -->
+<!-- beautify ignore:start -->
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="static/assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    {% comment %} <link rel="preconnect" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" /> {% endcomment %}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="/static/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/static/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/static/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/static/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="/static/assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="/static/assets/js/config.js"></script>
+
+  
+  </head>
+
+  <body><br>
+    <h1>Signup</h1>
+    <form class="" action="" method="POST">
+      {% csrf_token %}
+    <!-- Layout wrapper -->
+    <div class="row">
         <div class="col-md-6">
             <div class="item form-group {% if form.username.errors %} has-error  {% endif %}"> 
                 <label for="Name">Username</label>
@@ -51,7 +94,25 @@
                 {% endif %}
               </div>
        </div><br>
-      <div class="col-md-6">
+    </div><br>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="item form-group {% if form.email.errors %} has-error  {% endif %}"> 
+                <label for="Name">Email</label>
+                <div class="input-field">   {{form.email}}</div>
+                {% if form.email.errors %}
+                {% for error in form.email.errors %}
+                <span class="error text-danger">
+                <strong>{{ error|escape }}</strong>
+                </span>
+                {% endfor %}
+                {% endif %} 
+              </div>
+       </div><br>
+    </div>
+
+      {% comment %} <div class="col-md-6">
         <div class="item form-group {% if form.email.errors %} has-error  {% endif %}"> 
             <label for="email">Email</label>
             <div class="input-field">  {{form.email}}</div>
@@ -61,11 +122,10 @@
                 <strong>{{ error|escape }}</strong>
             </span>
             {% endfor %}
-            {% endif %}
+            {% endif %} {% endcomment %}
              
-        </div>
-      </div>
-    </div><br>
+       
+   <br>
 
       <div class="row">
               <div class="col-md-6">
@@ -82,23 +142,15 @@
                
                 </div>
              </div><br>
-             <div class="item form-group {% if form.phone_number.errors %} has-error  {% endif %}"> 
-                <label for="pwd">Phone Number</label>
-                <div class="input-field">{{form.phone_number}}</div>
-                {% if form.phone_number.errors %}
-                {% for error in form.phone_number.errors %}
-                <span class="error text-danger">
-                    <strong>{{ error|escape }}</strong>
-                </span>
-                {% endfor %}
-                {% endif %}
-            </div> <br>
-
+           
  
-        <div class="d-flex align-items-start">
+        <div class="d-flex align-items-start"><br> </div>
           
-
-        </div> <button class="btn btn-block text-center my-3">Sign up</button>
+        <div class="row">
+            <div class="col-md-6">
+            <button class="btn btn-info btn-lg">Sign up</button>
+            </div>
+        </div>
         {% if messages%}
         <ul class="messages">
             {% for message in messages %}
@@ -116,4 +168,40 @@
 
      
     </form>
-</div>
+</div> 
+                        
+
+                          
+                
+         
+
+            </script>
+            <script src="static/assets/vendor/libs/jquery/jquery.js"></script>
+            <script src="static/assets/vendor/libs/popper/popper.js"></script>
+            <script src="static/assets/vendor/js/bootstrap.js"></script>
+            <script src="static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+        
+            <script src="static/assets/vendor/js/menu.js"></script>
+            <!-- endbuild -->
+        
+            <!-- Vendors JS -->
+            <script src="static/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+        
+            <!-- Main JS -->
+            <script src="static/assets/js/main.js"></script>
+        
+            <!-- Page JS -->
+            <script src="static/assets/js/dashboards-analytics.js"></script>
+        
+            <!-- Place this tag in your head or just before your close body tag. -->
+            <script async defer src="https://buttons.github.io/buttons.js"></script>
+          </body>
+        </html>
+        </form>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+<script src ="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src ="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src ="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+
