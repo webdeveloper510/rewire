@@ -273,7 +273,13 @@
            .iconsecdivimg {
                padding: 50px;
            }
-           
+            
+           .coloradd {
+            background-color: #69ace0 !important;
+        }
+        a.Peoximo-anchor {
+            text-decoration: none;
+        }
            
            
            

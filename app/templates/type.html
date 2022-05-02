@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 
-<style>
-    .coloradd{
-        background-color: #69ace0;
-        }
-</style>
+
 {% load static %}
 
 <html lang="en">
@@ -60,19 +56,19 @@
 				  <div class="iconsecdivimg">
 				   <div class="row">
 				   <div class="icon-img-sec">
-					  <div class="text-divsecond">
+					  <div class="text-divsecond  build"  makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg1">
 							   <a href="#">
 							  <img src="static/images/saude.png" alt="logo" width="1" height="1" class="img-responsicon">
 							   </a>
 							</div>
-							<div class="textdivbox text-left">
+							<div class="textdivbox text-left ">
 							   <p>Saúde</p>
 							</div>
 						 </div>
 					  </div>
-					  <div class="text-divsecond mardiv">
+					  <div class="text-divsecond mardiv build" makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg2">
 							   <a href="#">
@@ -85,7 +81,7 @@
 						 </div>
 					  </div>
 					  
-					  <div class="text-divsecond">
+					  <div class="text-divsecond build" makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg3">
 							   <a href="#">
@@ -105,7 +101,7 @@
 			 <div class="row">
 				<div class="col-md-12">
 				   <div class="icon-img-sec">
-					  <div class="text-divsecond">
+					  <div class="text-divsecond build" makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg1">
 							   <a href="#">
@@ -117,7 +113,7 @@
 							</div>
 						 </div>
 					  </div>
-					  <div class="text-divsecond mardiv">
+					  <div class="text-divsecond mardiv build" makes="id_1" >
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg2 plainimg">
 							   <a href="#">
@@ -130,7 +126,7 @@
 						 </div>
 					  </div>
 					  
-					  <div class="text-divsecond">
+					  <div class="text-divsecond build"  makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg3">
 							   <a href="#">
@@ -162,7 +158,7 @@
 							</div>
 						 </div>
 					  </div>
-					  <div class="text-divsecond mardiv">
+					  <div class="text-divsecond mardiv build" makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg2 plainimg">
 							   <a href="#">
@@ -175,7 +171,7 @@
 						 </div>
 					  </div>
 					  
-					  <div class="text-divsecond">
+					  <div class="text-divsecond build" makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg3">
 							   <a href="#">
@@ -195,7 +191,7 @@
 			 <div class="row">
 				<div class="col-md-12">
 				   <div class="icon-img-sec">
-					  <div class="text-divsecond">
+					  <div class="text-divsecond build" makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg1">
 							   <a href="#">
@@ -207,7 +203,7 @@
 							</div>
 						 </div>
 					  </div>
-					  <div class="text-divsecond mardiv">
+					  <div class="text-divsecond mardiv build" makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg2 plainimg">
 							   <a href="#">
@@ -220,7 +216,7 @@
 						 </div>
 					  </div>
 					  
-					  <div class="text-divsecond">
+					  <div class="text-divsecond build" makes="id_1">
 						 <div class="box-iconfirst">
 							<div class="plusicondiv-secimg3">
 							   <a href="#">
@@ -235,19 +231,19 @@
 				   </div>
 				</div>
 			 </div>
-			 <div class="textmeusec" id="id_1" >
+			 <div class="textmeusec">
 				<p>O meu seguro não se encontra nesta lista</p>
 			 </div>
 		</div>
 		</div>
 	</div>
 	</div>
-		<div class="think" id="id_1">
-			<div class="Peoximo text-center">
-				<div class="textmeusec" id="id_1" >
+			<a href="{% url  'add' %}" class="Peoximo-anchor">
+				<div class="Peoximo text-center" id="id_1" >
 				<p>Peoximo</p>
-				</div>
+					
 			</div>
+		</a>
 		</div>
    </body>
 </html>
@@ -261,9 +257,6 @@
         console.log("show_id",ro) 
         var def =ro   
         console.log(def,'def')         
-  
-  
-  
         $("#"+def).addClass("coloradd");  
      });
 </script>

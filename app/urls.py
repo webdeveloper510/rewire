@@ -20,4 +20,5 @@ urlpatterns = [
     path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     path('show', signupview.new, name='show'),
     path('type', signupview.insurance, name='type'),
+    path('add', signupview.insurance_add, name='add'),
 ]

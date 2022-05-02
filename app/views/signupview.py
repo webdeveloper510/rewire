@@ -152,3 +152,8 @@ def new(request):
 def insurance(request):
   
     return render(request,"type.html")
+
+
+
+def insurance_add(request):
+     return render(request,"ins_add.html")
