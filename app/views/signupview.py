@@ -22,6 +22,7 @@ from django.contrib.auth import get_user_model
 def index(request):
      return render(request,"index.html")
 
+
 def create(request):
        
     context=user.objects.all()
@@ -85,7 +86,7 @@ def activate(request, uidb64, token):
     User=get_user_model()
     
     try:
-        uid = force_str(urlsafe_base64_decode(uidb64))
+        uid = (urlsafe_base64_decode(uidb64))
         users = User.objects.get(id=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         users = None
@@ -141,3 +142,13 @@ def update(request,id):
         return redirect("/data")
         
     return render(request,"update.html",{'agencies':ploicies})
+
+
+def new(request):
+  
+    return render(request,"s.html")
+
+
+def insurance(request):
+  
+    return render(request,"type.html")

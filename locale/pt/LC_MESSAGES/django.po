@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-29 10:57+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\app\manager.py:14
+msgid "The Email must be set"
+msgstr ""
+
+#: .\app\manager.py:30
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: .\app\manager.py:32
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: .\app\models.py:12
+msgid "email"
+msgstr ""
+
+#: .\app\templates\login.html:64 .\app\templates\signup\signup.html:272
+msgid "Earn commissions and fast access to your insurance"
+msgstr "Ganhe comissões e acesso rápido ao seu seguros"
+
+#: .\app\templates\login.html:77 .\app\templates\login.html:95
+#: .\app\templates\signup\signup.html:338
+msgid "Login"
+msgstr "Conecte-se"
+
+#: .\app\templates\login.html:92
+msgid "Forget Password?"
+msgstr "Esqueceu a senha"
+
+#: .\app\templates\signup\signup.html:285
+msgid "Create an account"
+msgstr "Crie a sua conta aqui"
+
+#: .\app\templates\signup\signup.html:333
+msgid ""
+"I confirm that I accept the transfer of my personal data to Rewire, whose"
+msgstr ""
+"Confirmo que aceito a transferência dos meus dados pessoais para a Rewire,"
+"cuja"
+
+#: .\app\templates\signup\signup.html:333
+msgid "Privacy Policy and Data Protection"
+msgstr "Política de Privacidade e Proteção de Dados Pessoais"
+
+#: .\app\templates\signup\signup.html:333
+msgid "of Persons available here declare to know and accept."
+msgstr "de Pessoas aqui disponíveis declaram conhecer e aceitar."
+
+#: .\app\templates\signup\signup.html:337
+msgid "Create"
+msgstr "Criar"
+
+#: .\app\templates\signup\signup.html:338
+msgid "Already have an account?"
+msgstr "já tem uma conta?"
+
+#: .\app\templates\translate.html:18
+msgid "Have a good day"
+msgstr ""
