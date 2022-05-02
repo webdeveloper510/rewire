@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from decimal import DefaultContext
 from pathlib import Path
 import pymysql
 pymysql.version_info = (1, 4, 13, "final", 0)
@@ -43,8 +44,8 @@ MESSAGE_TAGS = {
  }
     
 
-#ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['184.168.122.169']
+ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['184.168.122.169']
 
 # Application definition
 
@@ -56,20 +57,27 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'google_translate',
     'crispy_forms',
-    'active_link'
+    'active_link',
+   
 ]
 
 AUTH_USER_MODEL = 'app.user'
 
 MIDDLEWARE = [
+    "app.middelware.ForceDefaultLanguageMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware', 
+    
+  
+   
 ]
 
 ROOT_URLCONF = 'rewire.urls'
@@ -85,7 +93,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+             
             ],
+            
+    
+
         },
     },
 ]
@@ -104,24 +116,10 @@ WSGI_APPLICATION = 'rewire.wsgi.application'
 # }
 
 
-# DATABASES = {
-#     'default': {
-#        'ENGINE': 'django.db.backends.mysql',   
-#        'NAME': 'rewire',
-#        'HOST': 'localhost',
-#        'PORT': '3306',
-#        'USER': 'root',
-#        'PASSWORD': '',
-#        'OPTIONS': {
-#             'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
-            
-             
-#         }
-#     }
-# }
-
-
-DATE_FORMAT = 'YYYY-MM-DD'
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+print(LOCALE_PATHS)
 
 DATABASES = {
     'default': {
@@ -129,8 +127,8 @@ DATABASES = {
        'NAME': 'rewire',
        'HOST': 'localhost',
        'PORT': '3306',
-       'USER': 'rewire',
-       'PASSWORD': 'Hg2gi37#',
+       'USER': 'root',
+       'PASSWORD': '',
        'OPTIONS': {
             'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
             
@@ -138,6 +136,25 @@ DATABASES = {
         }
     }
 }
+
+
+DATE_FORMAT = 'YYYY-MM-DD'
+
+# DATABASES = {
+#     'default': {
+#        'ENGINE': 'django.db.backends.mysql',   
+#        'NAME': 'rewire',
+#        'HOST': 'localhost',
+#        'PORT': '3306',
+#        'USER': 'rewire',
+#        'PASSWORD': 'Hg2gi37#',
+#        'OPTIONS': {
+#             'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+            
+             
+#         }
+#     }
+# }
 
 
 # Password validation
@@ -162,12 +179,29 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+
+from django.utils.translation import  gettext_lazy as _
+
+LANGUAGE_CODE = 'pt'
+
+DEFAULT_LANGUAGE = 2
+LANGUAGES = (
+    ('en-us', 'English'),
+    ('pt', 'Portuguese'),
+    
+    
+   
+   
+)
+
+from django.conf import settings
+
+print("check1",settings.LANGUAGE_CODE)
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
 
@@ -189,9 +223,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'test12041966@gmail.com'
+EMAIL_HOST_USER = 'testsood981@gmail.com'
 EMAIL_HOST_PASSWORD = 'mongodb31'
 EMAIL_PORT = 587
 
 
-#xfgf

@@ -13,12 +13,15 @@ from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.contrib.auth.hashers import make_password
+from django.conf import settings
+from django.utils import translation
 
 
 
 def user_login(request):
     
-  
+    # print("ss",request.LANGUAGE_CODE)
+    
     if request.method == "POST":
         uname= request.POST.get('uname')
         print(uname)
@@ -35,7 +38,7 @@ def user_login(request):
         if user is not None:
           login(request,user)
           messages.success(request,"You are Successfully LoggedIn")
-          return redirect('/')
+          return redirect('show')
          
         else:
           messages.error(request,"Invalid Credential", extra_tags='login')
@@ -94,3 +97,15 @@ def change_password(request,**kwargs):
 def userLogout(request):
   auth.logout(request)
   return redirect('/')
+
+def home(request): 
+    from django.utils import translation
+    user_language = 'pt' 
+    translation.activate(user_language)
+    response = render(request, 'pages/home.html')
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, user_language)
+    return response
+
+
+
+

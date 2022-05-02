@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" href="{% static 's.css' %}">
+<html lang="en">
+   <head>
+      <title>Rewire</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="styles.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      
+   </head>
+   <body>
+      <div class="row-background background-element">
+         <div class="background-wrapper">
+            <nav class="navbar navbar-expand-sm navbar-dark">
+               <div class="container main-container">
+                  <a class="navbar-brand" href="#">
+                     <div class="logo-image main-logo  logo-dark" data-maxheight="62" style="height: 62px;display:block;">
+                        <img src="/static/images/rewire-logo_-01.png" alt="logo" width="1" height="1" class="img-responsive"/>
+                     </div>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                  <span class="navbar-togglericon"><i class="fa fa-bars"></i></span>
+                  </button>
+               </div>
+               <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav">
+                     <li class="nav-item">
+                        <a class="nav-link Como-funciona" href="#"><i class="fa fa-bar-chart login-user" aria-hidden="true"></i> Estatisticas</a>
+                     </li>
+                     <li class="nav-item Login-suportadas">
+                        <a class="nav-link" href="#"><i class="fa fa-clock-o login-user" aria-hidden="true"></i>Historico</a>
+                     </li>
+                     <li class="nav-item Login-menu">
+                        <a class="nav-link" href="#">
+                        <i class="fa fa-user login-user"></i>Minha Conta</a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row mtop2">
+            <div class="col-md-12">
+               <div class="heading-text el-text">
+                  <h2 class="fontspacer">Olá Luís!</h2>
+                  <p  class="uncode_text">Adiciona jà o teu primeiro seguro e começa  ã gnhar com ele</p>
+               </div>
+               <div class="icon-img-sec">
+                  <div class="uncode_text_column text-lead">
+                     <div class="boxiconsec-first">
+                        <div class="plusicondiv">
+                           <a href="{% url 'type' %}">
+                           <span class="faplusicon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                           </a>
+                        </div>
+                        <div class="textdivbox text-center">
+                           <p>Adicionar seguro</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="uncode_text_column text-lead divsecond">
+                     <div class="boxiconsec-second">
+                        <p>Aqui irà toda a info do teu seguro</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="bottom-boxsec">
+            <div class="textboxiconsec">
+               <p>Aqui irà estar o saldo total das comissões dos teus seguros</p>
+            </div>
+         </div>
+      </div>
+      <div class="textvelusec d-flex">
+         <p>Saldo do cartão</p>
+         <p class="text-right number-welu"><span class="numberwelu€">0.00€</span></p>
+      </div>
+   </body>
+</html>

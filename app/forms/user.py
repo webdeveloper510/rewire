@@ -13,13 +13,13 @@ class AddCreateForm(ModelForm):
     email = forms.CharField(required = True,widget=forms.TextInput(
         attrs={
         'class':'form-control',
-        'placeholder':'Enter your Email address'
+        'placeholder':'Email'
         }
     ))
     username = forms.CharField(label="Username",required = True,widget=forms.TextInput(
         attrs={
         'class':'form-control',
-        'placeholder':'Enter your name',
+        'placeholder':'Name',
         
         
         }
@@ -27,7 +27,7 @@ class AddCreateForm(ModelForm):
     ))
     password=forms.CharField(widget=forms.PasswordInput( attrs={
          'class':'form-control',
-         'placeholder':'Enter your Password',
+         'placeholder':'Password',
         }),validators=[validate_password])
   
 

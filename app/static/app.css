@@ -1,24 +1,341 @@
-.menu .app-brand.demo {
-    height: 100px !important;
-    margin-top: 12px;
-}
-a.Logoutbtn button.btn {
-        background: #e7e7e7;
-}
-.card-body.box-moddel {
-    padding: 40px 20px 0px 20px !important;
-    background: #e4d0ff;
-}
-a.app-brand-link {
-    display: block !important;
-}
-.box-moddel p {
-    margin-top: 20px;
-}
 img {
+    vertical-align: middle;
     width: 100%;
+    height: 100%;
+    }
+   .container.main-container {
+    padding: 30px 0px;
+    }
+
+    .background-wrapper {
+    backface-visibility: hidden;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height:350px;
+    overflow: hidden;
+    border-radius: inherit;
+    background-clip: padding-box;
+    }
+   
+   p.split-word-flow {
+       color: #ffffff;
+       font-size: 24px;
+       font-weight: 500;
+       line-height: 1.20;
+   }
+    .container-fluid.form-container {
+       background: white;
+       border-radius: 10px;
+       position: relative;
+       top: -10px;
+   }
+   .container.section2 {
+       border-radius: 50px;
+       background: whitesmoke;
+       padding: 50px;
+   }
+   .section-logon-form {
+       width: 70%;
+       margin: 0 auto;
+       background: #ffffff;
+       padding: 25px 50px;
+       border-radius: 20px;
+   }
+   .formgroup-box {
+       margin: 30px 0px;
+   }
+   .form-group.formgroup-box .form-control {
+       background: #f5f5f5 !important;
+       border: none !important;
+       border-radius: 10px;
+       padding: 10px 20px;
+   }
+   p.Confirmo-text {
+       font-size: 18px;
+       font-weight: 400;
+   }
+   span.Privacidade-text {
+   color: #a200ad;
+   color: #9700be;
+   font-weight: 500;
+   }
+   
+   .Submitbtndiv button {
+       width: 300px;
+       background-color: #06e3f7;
+       border-color: unset;
+       font-size: 18px;
+       font-weight: 500;
+       border-radius: 10px;
+   }
+   .Submitbtndiv button:hover {
+       background-color: #04becf;
+       border-color: unset;
+   }
+
+   .Submitbtndiv {
+       text-align: center;
+   }
+   p.Confirmoqua-text {
+       font-size: 18px;
+       font-weight: 400;
+       margin-top: 20px;
+   }
+   
+   ::placeholder {
+       color: #b9b9b9 !important;
+   }
+   
+   @media only screen and (max-width: 600px) {
+   
+   
+   .container.main-container {
+       padding: 30px 0px;
+       padding-bottom: 0 !important;
+   }
+   .navbar-dark .navbar-brand.logoimg {
+       margin: 0 auto;
+   }
+   .logo-image.main-logo.logo-light {
+       height: 50px !important;
+   }
+   p.split-word-flow {
+       color: #1b1b1b;
+       font-size: 14px;
+       font-weight: 500;
+       line-height: 1.20;
+       width: 60%;
+       margin: 0 auto;
+   }
+   ::placeholder {
+       font-size: 14px;
+       color: #b9b9b9 !important;
+   }
+   .uncoltable {
+       text-align: center;
+       margin-top: 5px;
+   }
+       .section-logon-form {
+           width: 100%;
+           margin: 0 auto;
+           background: unset;
+           padding: 0 10px;
+           border-radius: 0;
+       }
+       .container.section2 {
+           border-radius: 0;
+           background: unset;
+           padding: 0;
+       }
+       .container-fluid.form-container {
+           background: white;
+           border-radius: 10px;
+           position: relative;
+           top: -180px;
+           padding-top: 15px !important;
+       }
+       
+       .formgroup-box {
+           margin: 20px 0px;
+       }
+       p.Confirmo-text {
+           margin-bottom: 20px;
+           color: gray;
+           font-size: 14px;
+       }
+       p.Confirmoqua-text {
+           color: gray;
+           font-size: 14px;
+       }
+       
+   .Submitbtndiv button {
+       width: 100%;
+       font-size: 14px;
+   }
+   
+   h2.fontspacer {
+   font-size: 22px;
+   font-weight: 700;
+}
+   
+   }
+   
+   img {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    }
+   .container.main-container {
+    padding: 30px 0px;
+    }
+
+    .background-wrapper {
+    backface-visibility: hidden;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height:350px;
+    overflow: hidden;
+    border-radius: inherit;
+    background-clip: padding-box;
+    }
+
+p.split-word-flow {
+ color: #ffffff;
+ font-size: 24px;
+ font-weight: 500;
+ line-height: 1.20;
+}
+.container-fluid.form-container {
+ background: white;
+ border-radius: 10px;
+ position: relative;
+ top: -10px;
+}
+.container.section2 {
+ border-radius: 50px;
+ background: whitesmoke;
+ padding: 50px;
+}
+.section-logon-form {
+ width: 70%;
+ margin: 0 auto;
+ background: #ffffff;
+ padding: 25px 50px;
+ border-radius: 20px;
+}
+.formgroup-box {
+ margin: 15px 0px;
+}
+.form-group.formgroup-box .form-control {
+ background: #f5f5f5 !important;
+ border: none !important;
+ border-radius: 10px;
+ padding: 10px 20px;
+ margin: 5px 0px;
+}
+p.Confirmo-text {
+ font-size: 18px;
+ font-weight: 400;
+}
+span.Privacidade-text {
+color: #a200ad;
+color: #9700be;
+font-weight: 500;
 }
 
-table#newRow {
-    display: none
-  }
+.Submitbtndiv button {
+ width: 300px;
+ background-color: #06e3f7;
+ border-color: unset;
+ font-size: 18px;
+ font-weight: 500;
+ border-radius: 10px;
+}
+.Submitbtndiv button:hover {
+ background-color: #04becf;
+ border-color: unset;
+}
+
+.Submitbtndiv {
+ text-align: center;
+}
+p.Confirmoqua-text {
+ font-size: 18px;
+ font-weight: 400;
+ margin-top: 20px;
+}
+
+::placeholder {
+ color: #b9b9b9 !important;
+}
+.form-group.formgroup-box label {
+ color: gray;
+}
+
+@media only screen and (max-width: 992px) {
+ .Submitbtndiv button {
+   width: 100%;
+ }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
+.container.main-container {
+ padding: 30px 0px;
+ padding-bottom: 0 !important;
+}
+.navbar-dark .navbar-brand.logoimg {
+ margin: 0 auto;
+}
+.logo-image.main-logo.logo-light {
+ height: 50px !important;
+}
+p.split-word-flow {
+ color: #1b1b1b;
+ font-size: 14px;
+ font-weight: 500;
+ line-height: 1.20;
+ width: 60%;
+ margin: 0 auto;
+}
+::placeholder {
+ font-size: 14px;
+ color: #b9b9b9 !important;
+}
+.uncoltable {
+ text-align: center;
+ margin-top: 5px;
+}
+ .section-logon-form {
+   width: 100%;
+   margin: 0 auto;
+   background: unset;
+   padding: 0 10px;
+   border-radius: 0;
+ }
+ .container.section2 {
+   border-radius: 0;
+   background: unset;
+   padding: 0;
+ }
+ .container-fluid.form-container {
+   background: white;
+   border-radius: 10px;
+   position: relative;
+   top: -180px;
+   padding-top: 15px !important;
+ }
+ 
+ .formgroup-box {
+   margin: 15px 0px;
+ }
+ p.Confirmo-text {
+   margin-bottom: 20px;
+   color: gray;
+   font-size: 14px;
+ }
+ 
+ 
+.Submitbtndiv button {
+ width: 100%;
+ font-size: 14px;
+}
+
+h2.fontspacer {
+font-size: 22px;
+font-weight: 700;
+}
+
+.form-group.formgroup-box label {
+color: gray;
+font-size: 14px;
+}
+
+}
+

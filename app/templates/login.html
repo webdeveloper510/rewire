@@ -1,216 +1,127 @@
-{% comment %} {% load static %}
-
-<link rel="stylesheet" href="{% static 'app.css' %}">
-
-
-<div class="wrapper bg-white">
-    <div class="h2 text-center">Rewire</div>
-  <h2><div class="h4 text-muted text-center pt-2">Login</div><br></h2>
-    <form class="pt-3" method ="POST">
-        {% csrf_token %}
-        <div class="form-group py-2">
-            <label>Username</label>
-            <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" placeholder="Username or Email Address" name="uname"></div><br>
-        </div>
-        <div class="form-group py-1 pb-2">
-            <label>Password</label>
-            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password" placeholder="Enter your Password"  name="psw" required> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div><br>
-        </div>
-        <div class="d-flex align-items-start">
-            <div class="ml-auto"> <a href="{% url 'password_reset' %}" id="forgot">Forgot Password?</a> </div><br>
-        </div>
-        {% if messages%}
-        <ul class="messages">
-            {% for message in messages %}
-            <div class="container-fluid p-0">
-           
-              <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
-              
-                <center>{{ message }}</center> 
-            
-            {% endfor %}
-           
-        </ul> 
-        {% endif %}  
-        <div class="col-md-12 text-center">
-            <button type="submit" class="btn btn-block text-center my-3">Login</button>
-        </div>
-        <div class="text-center pt-3 text-muted">Not a member? <a href="{% url 'signup'%}">Sign up</a></div>
-    </form>
-</div> {% endcomment %}
-
-{% comment %} dfssssssssss {% endcomment %}
+ <!DOCTYPE html>
+ {% load static %}
+ {% load i18n %}
 
 
-<!DOCTYPE html>
-
-{% load static %}
-
-<link rel="stylesheet" href="{% static 'app.css' %}">
-
-
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
-<html
-  lang="en"
-  class="light-style layout-menu-fixed"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="../assets/"
-  data-template="vertical-menu-template-free"
->
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-    />
-
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
-
-    <meta name="description" content="" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="static/assets/img/favicon/favicon.ico" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    {% comment %} <link rel="preconnect" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" /> {% endcomment %}
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="/static/assets/vendor/fonts/boxicons.css" />
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="/static/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="/static/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="/static/assets/css/demo.css" />
-
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="/static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
-    <link rel="stylesheet" href="/static/assets/vendor/libs/apex-charts/apex-charts.css" />
-
-    <!-- Page CSS -->
-
-    <!-- Helpers -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/static/assets/vendor/js/helpers.js"></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="/static/assets/js/config.js"></script>
-
-  
-  </head>
-
-  <body><br>
-    <h1>Login</h1>
-    <form class="" action="" method="POST">
-      {% csrf_token %}
-    <!-- Layout wrapper -->
-    <div class="row">
-        <div class="col-md-6">
-            <label>Email</label>
-            <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" placeholder="Email Address" name="uname"></div><br>
-           
-       </div><br>
-    </div><br>
-
-    <div class="row">
-        <div class="col-md-6">
-            <label>Password</label>
-            <div class="input-field"> <span class="fas fa-lock p-2"></span> <input type="password" placeholder="Enter your Password"  name="psw" required> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div><br>
-            
-       </div><br>
-    </div>
-    <div class="d-flex align-items-start">
-        <div class="ml-auto"> <a href="{% url 'password_reset' %}" id="forgot">Forgot Password?</a> </div><br>
-    </div>
-    {% if messages%}
-    <ul class="messages">
-        {% for message in messages %}
-        <div class="container-fluid p-0">
-       
-          <div class="alert {{ message.tags }} alert-dismissible" role="alert" >
-          
-            <center>{{ message }}</center> 
-        
-        {% endfor %}
-       
-    </ul> 
-    {% endif %}  
-
-     
-       
-   <br>
-
-     
-           
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  
-        <div class="d-flex align-items-start"><br> </div>
+
+<form action="{% url 'set_language' %}" method="post">
+  {% csrf_token %}
+  <div class="row g-2">
+    <div class="col col-sm-6 col-lg-3 col-md-4">
+      <div class="form-floating">
+        <input name="next" type="hidden" value="">
+        <select class="form-select" name="language" onchange="this.form.submit()" id="language">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
           
-        <div class="row">
-            <div class="col-md-6">
-            <button class="btn btn-info btn-lg">Login</button>
-            </div>
-        </div>
+          
+          {% for language in languages %}
+      
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+              {{ language.name_local }} ({{ language.code }})
+            </option>
+          {% endfor %}
+        </select>
+        <label for="language">Language</label>
        
+      </div>
+    </div>
+  </div>
+</form>
 
+<link rel="stylesheet" href="{% static 'app.css' %}">
+ <html>
+    <head>
+       <title>Rewire</title>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+       <style>
      
-    </form>
-</div> 
-                        
-
-                          
-                
+       </style>
+    </head>
+    <body>
+       <div class="row-background background-element">
+          <div class="background-wrapper">
+             <div class="background-inner" style="background-image: url(/static/images/logo.jpg);background-repeat: no-repeat;background-position: center center;background-attachment: scroll;background-size: cover;width: 100%;     height: 100%;">
+                <nav class="navbar navbar-expand-sm navbar-dark">
+                   <div class="container main-container">
+                      <a class="navbar-brand logoimg" href="#">
+                         <div class="logo-image main-logo  logo-light" data-maxheight="62" style="height: 62px;">
+                            <img src="/static/images/rewire-logo_-02.png" alt="logo" width="1" height="1" class="img-responsive" />
+                         </div>
+                      </a>
+                   </div>
+                 </nav>
+         <div class="container uncol style-dark">
+           <div class="uncoltable">
+             <p class="split-word-flow">
+              {% trans  'Earn commissions and fast access to your insurance' %} 
+             </p>
+           </div>
+           
+         </div>
+          
+             </div>
+        </div>
+       </div>
+     <div class="container-fluid form-container  pt-5">
+     <div class="container section2">
+       <div class="section-logon-form">
+         <div class="heading-text text-center el-text">
+           <h2 class="fontspacer">{% trans 'Login' %}</h2>	
+         </div>
+         <form action="" method="POST">
+           {% csrf_token %}
          
-
-            </script>
-            <script src="static/assets/vendor/libs/jquery/jquery.js"></script>
-            <script src="static/assets/vendor/libs/popper/popper.js"></script>
-            <script src="static/assets/vendor/js/bootstrap.js"></script>
-            <script src="static/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-        
-            <script src="static/assets/vendor/js/menu.js"></script>
-            <!-- endbuild -->
-        
-            <!-- Vendors JS -->
-            <script src="static/assets/vendor/libs/apex-charts/apexcharts.js"></script>
-        
-            <!-- Main JS -->
-            <script src="static/assets/js/main.js"></script>
-        
-            <!-- Page JS -->
-            <script src="static/assets/js/dashboards-analytics.js"></script>
-        
-            <!-- Place this tag in your head or just before your close body tag. -->
-            <script async defer src="https://buttons.github.io/buttons.js"></script>
-          </body>
-        </html>
-        </form>
-
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
-<script src ="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src ="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src ="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+         
+           <div class="form-group formgroup-box">
+              <label for="email"></label>
+             <input type="email" class="form-control" id="email" placeholder="Email" name="uname" required>
+           </div>
+           <div class="form-group formgroup-box">
+            <label for="pwd"></label>
+             <input type="password" class="form-control" id="pwd" placeholder="Password" name="psw" required>
+           </div>
+           <div class="form-group">
+             <p class="forgot"><span class="Privacidade-text">{% trans 'Forget Password?' %}</span></p>
+           </div>
+           <div class="Submitbtndiv">
+           <button type="submit" class="btn btn-primary">{% trans 'Login' %}</button>
+           </div>
+         </form>
+       </div>		
+     </div>
+     </div>
+         
+   
+    </body>
+ </html>
 
 
 
+<script>
+  $(function() {
+    $("#language").change(function() {
+        console.log( $('option:selected', this).text() );
+    });
+});
+</script>
 
+
+<script>
+  $('#langsuage').bind('change', function () { // bind change event to select
+      var url = $(this).val(); // get selected value
+      if (url != '') { // require a URL
+          window.location = url; // redirect
+      }
+      return false;
+  });
+</script>
 

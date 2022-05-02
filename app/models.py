@@ -35,3 +35,6 @@ class policy(models.Model):
   policy_yearly=models.CharField(max_length=200,null=True)
   status=models.CharField(max_length=200,null=True)    
   created_by=models.ForeignKey("user",on_delete=models.CASCADE,null=True)
+  
+  
+  
