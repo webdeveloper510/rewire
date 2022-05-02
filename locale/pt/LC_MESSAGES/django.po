@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-29 10:57+0530\n"
+"POT-Creation-Date: 2022-05-02 16:11+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,46 +34,150 @@ msgstr ""
 msgid "email"
 msgstr ""
 
-#: .\app\templates\login.html:64 .\app\templates\signup\signup.html:272
+#: .\app\templates\ins_add.html:33 .\app\templates\s.html:34
+#: .\app\templates\type.html:37
+msgid "Statistics"
+msgstr "Estatisticas"
+
+#: .\app\templates\ins_add.html:36 .\app\templates\s.html:37
+#: .\app\templates\type.html:40
+msgid "Historic"
+msgstr "Histórica"
+
+#: .\app\templates\ins_add.html:40 .\app\templates\s.html:41
+#: .\app\templates\type.html:44
+msgid "My Account"
+msgstr "Minha conta"
+
+#: .\app\templates\ins_add.html:51
+msgid "insurance data"
+msgstr "dados do seguro"
+
+#: .\app\templates\ins_add.html:58
+msgid "insurance company"
+msgstr "companhia de seguros"
+
+#: .\app\templates\ins_add.html:63
+msgid "Policy number"
+msgstr "Número da polícia"
+
+#: .\app\templates\ins_add.html:72
+
+msgid " add insurance"
+msgstr "adicionar seguro"
+
+#: .\app\templates\login.html:65 .\app\templates\signup\signup.html:278
 msgid "Earn commissions and fast access to your insurance"
 msgstr "Ganhe comissões e acesso rápido ao seu seguros"
 
-#: .\app\templates\login.html:77 .\app\templates\login.html:95
-#: .\app\templates\signup\signup.html:338
+#: .\app\templates\login.html:78 .\app\templates\login.html:96
+#: .\app\templates\signup\signup.html:344
 msgid "Login"
 msgstr "Conecte-se"
 
-#: .\app\templates\login.html:92
+#: .\app\templates\login.html:93
 msgid "Forget Password?"
 msgstr "Esqueceu a senha"
 
-#: .\app\templates\signup\signup.html:285
+#: .\app\templates\s.html:52
+msgid "Hello Luis!"
+msgstr "Olá Luís!"
+
+#: .\app\templates\s.html:53
+msgid "Add your first insurance now and start earning with it"
+msgstr "Adicione seu primeiro seguro agora e comece a ganhar com ele"
+
+#: .\app\templates\s.html:64
+msgid "Add Insurance"
+msgstr "Adicionar seguro"
+
+#: .\app\templates\s.html:70
+msgid "Here you will find all your insurance information."
+msgstr "Aqui você encontra todas as informações do seu seguro."
+
+#: .\app\templates\s.html:78
+msgid "Here will be the total balance of your insurance commissions"
+msgstr "Aqui estará o saldo total das suas comissões de seguro"
+
+#: .\app\templates\s.html:83
+msgid "card balance"
+msgstr "Saldo do cartão"
+
+#: .\app\templates\signup\signup.html:291
 msgid "Create an account"
 msgstr "Crie a sua conta aqui"
 
-#: .\app\templates\signup\signup.html:333
+#: .\app\templates\signup\signup.html:339
 msgid ""
 "I confirm that I accept the transfer of my personal data to Rewire, whose"
 msgstr ""
 "Confirmo que aceito a transferência dos meus dados pessoais para a Rewire,"
 "cuja"
 
-#: .\app\templates\signup\signup.html:333
+#: .\app\templates\signup\signup.html:339
 msgid "Privacy Policy and Data Protection"
 msgstr "Política de Privacidade e Proteção de Dados Pessoais"
 
-#: .\app\templates\signup\signup.html:333
+#: .\app\templates\signup\signup.html:339
 msgid "of Persons available here declare to know and accept."
 msgstr "de Pessoas aqui disponíveis declaram conhecer e aceitar."
 
-#: .\app\templates\signup\signup.html:337
+#: .\app\templates\signup\signup.html:343
 msgid "Create"
 msgstr "Criar"
 
-#: .\app\templates\signup\signup.html:338
+#: .\app\templates\signup\signup.html:344
 msgid "Already have an account?"
 msgstr "já tem uma conta?"
 
-#: .\app\templates\translate.html:18
-msgid "Have a good day"
-msgstr ""
+#: .\app\templates\type.html:55
+msgid "What type of insurance"
+msgstr "Que tipo de seguro"
+
+#: .\app\templates\type.html:69
+msgid "Health"
+msgstr "Saúde"
+
+#: .\app\templates\type.html:81
+msgid "Car"
+msgstr "Carro"
+
+#: .\app\templates\type.html:94
+msgid "Housing"
+msgstr "Habitação"
+
+#: .\app\templates\type.html:139
+msgid "Equipment"
+msgstr "Equipamento"
+
+#: .\app\templates\type.html:159
+msgid "Travel"
+msgstr "Viajar por"
+
+#: .\app\templates\type.html:171
+msgid "Mobility"
+msgstr "Mobilidade"
+
+#: .\app\templates\type.html:184
+msgid "Art"
+msgstr "Arte"
+
+#: .\app\templates\type.html:204
+msgid "Glasses"
+msgstr "Óculos"
+
+#: .\app\templates\type.html:216
+msgid "Electrode....."
+msgstr "Eletrodo....."
+
+#: .\app\templates\type.html:229
+msgid "Job"
+msgstr "Trabalho"
+
+#: .\app\templates\type.html:237
+msgid "My insurance is not on this list"
+msgstr "Meu seguro não está nesta lista"
+
+#: .\app\templates\type.html:245
+msgid "Next"
+msgstr "Próxima"

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 {% load static %}
-
+{% load i18n %}
 <html lang="en">
    <head>
-      <title>page3</title>
+      <title>Rewire</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="{% static 's.css' %}">
@@ -30,14 +30,14 @@
                <div class="collapse navbar-collapse" id="collapsibleNavbar">
                   <ul class="navbar-nav">
                      <li class="nav-item">
-                        <a class="nav-link Como-funciona" href="#"><i class="fa fa-bar-chart login-user" aria-hidden="true"></i> Estatisticas</a>
+                        <a class="nav-link Como-funciona" href="#"><i class="fa fa-bar-chart login-user" aria-hidden="true"></i> {% trans 'Statistics' %}</a>
                      </li>
                      <li class="nav-item Login-suportadas">
-                        <a class="nav-link" href="#"><i class="fa fa-clock-o login-user" aria-hidden="true"></i>Historico</a>
+                        <a class="nav-link" href="#"><i class="fa fa-clock-o login-user" aria-hidden="true"></i>{% trans 'Historic' %}</a>
                      </li>
                      <li class="nav-item Login-menu">
                         <a class="nav-link" href="#">
-                        <i class="fa fa-user login-user"></i>Minha Conta</a>
+                        <i class="fa fa-user login-user"></i>{% trans 'My Account' %}</a>
                      </li>
                   </ul>
                </div>
@@ -48,19 +48,19 @@
          <div class="container bottom-sec">
             <div class="col-md-12">
                <div class="heading-text d-flex">
-                  <h4 class="fontspacer">Dados do seguro</h4>
+                  <h4 class="fontspacer">{% trans 'insurance data' %}</h4>
                   <p class="uncode_text-cros"><i class="fa fa-times-thin fa-2x" aria-hidden="true"></i></p>
                </div>
                <form action="/action_page.php">
                   <div class="row">
                      <div class="col-md-6">
                         <div class="form-group">
-                           <input type="text" class="form-control input-box" placeholder="seguradora" name="text1">
+                           <input type="text" class="form-control input-box" placeholder="{% trans 'insurance company' %}" name="text1">
                         </div>
                      </div>
                      <div class="col-md-6">
                         <div class="form-group">
-                           <input type="text" class="form-control input-box" placeholder="Numbro da apólice" name="text2">
+                           <input type="text" class="form-control input-box" placeholder="{% trans 'Policy number' %}" name="text2">
                         </div>
                      </diV>
                   </div>
@@ -69,7 +69,7 @@
          </div>
       </div>
       <div class="Peoximo text-center">
-         <p><i class="fa fa-plus icon-plus" aria-hidden="true"></i> Adicionar seguro</p>
+         <p><i class="fa fa-plus icon-plus" aria-hidden="true"></i>{% trans ' add insurance' %} </p>
       </div>
    </body>
 </html>

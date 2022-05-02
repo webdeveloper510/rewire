@@ -44,8 +44,8 @@ MESSAGE_TAGS = {
  }
     
 
-ALLOWED_HOSTS = []
-#ALLOWED_HOSTS = ['184.168.122.169']
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['184.168.122.169']
 
 # Application definition
 
@@ -121,33 +121,14 @@ LOCALE_PATHS = (
 )
 print(LOCALE_PATHS)
 
-DATABASES = {
-    'default': {
-       'ENGINE': 'django.db.backends.mysql',   
-       'NAME': 'rewire',
-       'HOST': 'localhost',
-       'PORT': '3306',
-       'USER': 'root',
-       'PASSWORD': '',
-       'OPTIONS': {
-            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
-            
-             
-        }
-    }
-}
-
-
-DATE_FORMAT = 'YYYY-MM-DD'
-
 # DATABASES = {
 #     'default': {
 #        'ENGINE': 'django.db.backends.mysql',   
 #        'NAME': 'rewire',
 #        'HOST': 'localhost',
 #        'PORT': '3306',
-#        'USER': 'rewire',
-#        'PASSWORD': 'Hg2gi37#',
+#        'USER': 'root',
+#        'PASSWORD': '',
 #        'OPTIONS': {
 #             'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
             
@@ -155,6 +136,25 @@ DATE_FORMAT = 'YYYY-MM-DD'
 #         }
 #     }
 # }
+
+
+DATE_FORMAT = 'YYYY-MM-DD'
+
+DATABASES = {
+    'default': {
+       'ENGINE': 'django.db.backends.mysql',   
+       'NAME': 'rewire',
+       'HOST': 'localhost',
+       'PORT': '3306',
+       'USER': 'rewire',
+       'PASSWORD': 'Hg2gi37#',
+       'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+            
+             
+        }
+    }
+}
 
 
 # Password validation

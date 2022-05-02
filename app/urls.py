@@ -6,8 +6,8 @@ from django.views.i18n import JavaScriptCatalog
 
 
 urlpatterns = [
-    path('', signupview.index, name='index'),
-    path('signup/', signupview.create, name='signup'),
+    path('', signupview.create, name='signup'),
+    # path('signup/', signupview.create, name='signup'),
     path('login',loginview.user_login,name="login"),
     path('logout',loginview.userLogout,name="logout"),
     path('activate/<uidb64>/<token>/',signupview.activate, name='activate'),

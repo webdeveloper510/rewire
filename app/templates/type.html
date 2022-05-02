@@ -3,7 +3,9 @@
 
 {% load static %}
 
-<html lang="en">
+{% load i18n %}
+
+<html>
    <head>
       <title>Rewire</title>
       <meta charset="utf-8">
@@ -32,14 +34,14 @@
                <div class="collapse navbar-collapse" id="collapsibleNavbar">
                   <ul class="navbar-nav">
                      <li class="nav-item">
-                        <a class="nav-link Como-funciona" href="#"><i class="fa fa-bar-chart login-user" aria-hidden="true"></i> Estatisticas</a>
+                        <a class="nav-link Como-funciona" href="#"><i class="fa fa-bar-chart login-user" aria-hidden="true"></i>>{% trans 'Statistics' %}</a>
                      </li>
                      <li class="nav-item Login-suportadas">
-                        <a class="nav-link" href="#"><i class="fa fa-clock-o login-user" aria-hidden="true"></i>Historico</a>
+                        <a class="nav-link" href="#"><i class="fa fa-clock-o login-user" aria-hidden="true"></i>{% trans 'Historic' %}</</a>
                      </li>
                      <li class="nav-item Login-menu">
                         <a class="nav-link" href="#">
-                        <i class="fa fa-user login-user"></i>Minha Conta</a>
+                        <i class="fa fa-user login-user"></i>{% trans 'My Account' %}</a>
                      </li>
                   </ul>
                </div>
@@ -50,7 +52,7 @@
 		  <div class="container">
 				<div class="col-md-12">
 				   <div class="heading-text d-flex">
-					  <h4 class="fontspacer">Qual o tipo de seguro</h4>
+					  <h4 class="fontspacer">{% trans 'What type of insurance' %}</h4>
 					  <p class="uncode_text-cros"><i class="fa fa-times-thin fa-2x" aria-hidden="true"></i></p>
 				   </div>
 				  <div class="iconsecdivimg">
@@ -64,7 +66,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-left ">
-							   <p>Saúde</p>
+							   <p>{% trans 'Health' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -76,7 +78,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-center">
-							   <p>Carro</p>
+							   <p>{% trans 'Car' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -89,7 +91,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-right">
-							   <p>Habitação</p>
+							   <p>{% trans 'Housing' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -134,7 +136,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-right">
-							   <p>Equipamento</p>
+							   <p>{% trans 'Equipment' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -154,7 +156,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-left">
-							   <p>Viagem</p>
+							   <p>{% trans 'Travel' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -166,7 +168,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-center">
-							   <p>Mobilidade</p>
+							   <p>{% trans 'Mobility' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -179,7 +181,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-right">
-							   <p>Arte</p>
+							   <p>{% trans 'Art' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -199,7 +201,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-left" >
-							   <p>Oculos</p>
+							   <p>{% trans 'Glasses' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -211,7 +213,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-center">
-							   <p>Eletrodu.....</p>
+							   <p>{% trans 'Electrode.....' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -224,7 +226,7 @@
 							   </a>
 							</div>
 							<div class="textdivbox text-right"  >
-							   <p>Trabalho</p>
+							   <p>{% trans 'Job' %}</p>
 							</div>
 						 </div>
 					  </div>
@@ -232,7 +234,7 @@
 				</div>
 			 </div>
 			 <div class="textmeusec">
-				<p>O meu seguro não se encontra nesta lista</p>
+				<p>{% trans 'My insurance is not on this list' %}</</p>
 			 </div>
 		</div>
 		</div>
@@ -240,7 +242,7 @@
 	</div>
 			<a href="{% url  'add' %}" class="Peoximo-anchor">
 				<div class="Peoximo text-center" id="id_1" >
-				<p>Peoximo</p>
+				<p>{% trans 'Next' %}</p>
 					
 			</div>
 		</a>
